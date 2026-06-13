@@ -116,10 +116,6 @@ open ClipManager.xcodeproj
 
 Нативный **Swift + SwiftUI/AppKit**, без сторонних зависимостей.
 
-</div>
+`clipboard manager` · `macOS` · `Mac clipboard history` · `Win+V for Mac` · `pasteboard history` · `menu bar clipboard` · `copy/paste history` · `Swift` · `SwiftUI`
 
-<!--
-Keywords: clipboard manager macOS, Mac clipboard history, Win+V for Mac, pasteboard history,
-menu bar clipboard, copy/paste history macOS, clipboard history app, Swift clipboard manager,
-SwiftUI menu bar app.
--->
+</div>
