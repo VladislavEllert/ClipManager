@@ -68,7 +68,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         prev?.activate()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
             PasteService.simulatePaste()
         }
     }

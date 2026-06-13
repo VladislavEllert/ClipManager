@@ -44,12 +44,24 @@ enum PasteService {
 
     static func simulatePaste() {
         let src = CGEventSource(stateID: .combinedSessionState)
-        let vKey = CGKeyCode(kVK_ANSI_V)
-        let down = CGEvent(keyboardEventSource: src, virtualKey: vKey, keyDown: true)
-        down?.flags = .maskCommand
-        let up = CGEvent(keyboardEventSource: src, virtualKey: vKey, keyDown: false)
-        up?.flags = .maskCommand
-        down?.post(tap: .cghidEventTap)
-        up?.post(tap: .cghidEventTap)
+        let cmd = CGKeyCode(kVK_Command)
+        let v = CGKeyCode(kVK_ANSI_V)
+
+        // Реальные события клавиши Cmd (down/up), не только флаг — иначе приёмники
+        // вроде iPhone Mirroring теряют модификатор и печатают голый V.
+        let cmdDown = CGEvent(keyboardEventSource: src, virtualKey: cmd, keyDown: true)
+        cmdDown?.flags = .maskCommand
+        let vDown = CGEvent(keyboardEventSource: src, virtualKey: v, keyDown: true)
+        vDown?.flags = .maskCommand
+        let vUp = CGEvent(keyboardEventSource: src, virtualKey: v, keyDown: false)
+        vUp?.flags = .maskCommand
+        let cmdUp = CGEvent(keyboardEventSource: src, virtualKey: cmd, keyDown: false)
+        cmdUp?.flags = []
+
+        let tap = CGEventTapLocation.cghidEventTap
+        cmdDown?.post(tap: tap)
+        vDown?.post(tap: tap)
+        vUp?.post(tap: tap)
+        cmdUp?.post(tap: tap)
     }
 }
