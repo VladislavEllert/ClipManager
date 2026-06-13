@@ -1,5 +1,12 @@
 # ClipManager
 
+**Clipboard history manager for macOS — a `Win+V` alternative for Mac.**
+A lightweight menu bar app that keeps a history of everything you copy (text,
+images, files) and lets you browse it with a global hotkey and paste any past
+item into the active app. Built with native Swift + SwiftUI.
+
+---
+
 Менеджер истории буфера обмена для macOS — аналог `Win+V` из Windows, которого в macOS нет из коробки.
 
 Фоновое приложение в строке меню: по глобальному хоткею открывает компактное окно
@@ -80,3 +87,9 @@ open ClipManager.xcodeproj
 
 - Файлы хранятся по пути (не копируются) — перемещённый/удалённый оригинал
   не вставится. Текст и фото не затрагиваются.
+
+---
+
+**Keywords:** clipboard manager macOS, Mac clipboard history, Win+V for Mac,
+pasteboard history, menu bar clipboard, copy/paste history macOS, clipboard
+history app, Swift clipboard manager, SwiftUI menu bar app.
